@@ -1,0 +1,44 @@
+[ID-15] docker exec --user www-data nextcloud-app-1 php occ config:system:set jpeg_quality --value="80"
+[ID-32] docker cp nextcloud-db-1:/tmp/backup.sql U:\Nextcloud_System\backup_database.sql
+[ID-04] wsl -d Ubuntu
+[ID-21] docker exec --user www-data nextcloud-app-1 php occ config:system:set default_phone_region --value="IT"
+[ID-09]   'check_data_directory_permissions' => false,
+[ID-38] docker system prune -a --volumes
+[ID-12] docker compose restart
+[ID-27] taskkill /F /IM "Docker Desktop.exe"
+[ID-02] wsl --update
+[ID-43] docker cp C:\Nextcloud\backup_pre_update.sql nextcloud-db-1:/tmp/backup_pre_update.sql
+[ID-18] docker exec --user www-data nextcloud-app-1 php occ config:system:set trusted_domains 1 --value="IP_TAILSCALE"
+[ID-07] docker exec -u 0 nextcloud-app-1 chown -R www-data:www-data /var/www/html
+[ID-25] docker compose logs app --tail 30
+[ID-34] docker compose down
+[ID-14] docker exec --user www-data nextcloud-app-1 php occ config:system:set preview_max_y --value="2048"
+[ID-01] wsl --install
+[ID-40] docker exec nextcloud-db-1 sh -c "mysqldump -u root -psupersegreta nextcloud > /tmp/backup_pre_update.sql"
+[ID-30] wsl --unregister Ubuntu
+[ID-11] docker exec -u 0 nextcloud-app-1 chown -R www-data:www-data /var/www/html/config
+[ID-23] docker exec --user www-data nextcloud-app-1 php occ maintenance:repair --include-expensive
+[ID-36] docker exec nextcloud-db-1 sh -c "mysql -u root -psupersegreta nextcloud < /tmp/backup.sql"
+[ID-05] cd C:\Nextcloud
+[ID-20] docker exec --user www-data nextcloud-app-1 php occ config:system:delete trusted_domains 2
+[ID-39] docker exec --user www-data nextcloud-app-1 php occ trashbin:cleanup --all-users
+[ID-17] docker exec --user www-data nextcloud-app-1 php -f /var/www/html/cron.php
+[ID-41] docker cp nextcloud-db-1:/tmp/backup_pre_update.sql C:\Nextcloud\backup_pre_update.sql
+[ID-08] docker cp nextcloud-app-1:/var/www/html/config/config.php C:\Nextcloud\config.php
+[ID-26] docker exec -u 0 nextcloud-app-1 df -h
+[ID-31] docker exec nextcloud-db-1 sh -c "mysqldump -u root -psupersegreta nextcloud > /tmp/backup.sql"
+[ID-13] docker exec --user www-data nextcloud-app-1 php occ config:system:set preview_max_x --value="2048"
+[ID-44] docker exec nextcloud-db-1 sh -c "mysql -u root -psupersegreta nextcloud < /tmp/backup_pre_update.sql"
+[ID-19] docker exec --user www-data nextcloud-app-1 php occ config:system:set trusted_domains 2 --value="100.103.101.2"
+[ID-03] wsl --shutdown
+[ID-28] docker exec -it --user www-data nextcloud-app-1 php occ user:resetpassword NOME_UTENTE
+[ID-35] docker cp U:\Nextcloud_System\backup_database.sql nextcloud-db-1:/tmp/backup.sql
+[ID-22] docker exec --user www-data nextcloud-app-1 php occ config:system:set maintenance_window_start --type=integer --value=2
+[ID-10] docker cp C:\Nextcloud\config.php nextcloud-app-1:/var/www/html/config/config.php
+[ID-42] docker compose pull
+[ID-33] docker cp nextcloud-app-1:/var/www/html/config/config.php U:\Nextcloud_System\config_backup.php
+[ID-29] docker compose down -v
+[ID-16] docker exec --user www-data nextcloud-app-1 php occ config:system:set preview_concurrency_all --value="2"
+[ID-06] docker compose up -d
+[ID-37] docker cp U:\Nextcloud_System\config_backup.php nextcloud-app-1:/var/www/html/config/config.php
+[ID-24] docker ps

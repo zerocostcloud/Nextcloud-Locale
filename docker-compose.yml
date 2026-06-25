@@ -1,0 +1,44 @@
+services:
+  db:
+    image: mariadb:10.6
+    restart: always
+    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
+    volumes:
+    - db_data:/var/lib/mysql
+    environment:
+    - MYSQL_ROOT_PASSWORD=supersegreta
+    - MYSQL_PASSWORD=nextcloud
+    - MYSQL_DATABASE=nextcloud
+    - MYSQL_USER=nextcloud
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+    - 8081:8080
+  app:
+    image: nextcloud
+    restart: always
+    ports:
+      - 8080:80
+    volumes:
+      - nextcloud_data:/var/www/html # Il codice del programma (su C:)
+      - U:/Nextcloud_System:/var/www/html/data # Il "cervello" + Anteprime (su U:)
+      - U:/Nextcloud_Data:/my_photos # Le tue foto originali (su U:)
+    environment:
+      - MYSQL_PASSWORD=nextcloud
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+      - MYSQL_HOST=db
+  cron:
+     image: nextcloud
+     restart: always
+     volumes:
+       - nextcloud_data:/var/www/html
+       - U:/Nextcloud_System:/var/www/html/data
+       - U:/Nextcloud_Data:/my_photos
+     entrypoint: /cron.sh
+     depends_on:
+       - db
+volumes:
+  db_data:
+  nextcloud_data:
