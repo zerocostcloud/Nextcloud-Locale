@@ -42,3 +42,4 @@
 [ID-06] docker compose up -d
 [ID-37] docker cp U:\Nextcloud_System\config_backup.php nextcloud-app-1:/var/www/html/config/config.php
 [ID-24] docker ps
+[ID-45] winget upgrade -e --id Docker.DockerDesktop
