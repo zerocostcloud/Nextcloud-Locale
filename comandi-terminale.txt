@@ -43,3 +43,5 @@
 [ID-37] docker cp U:\Nextcloud_System\config_backup.php nextcloud-app-1:/var/www/html/config/config.php
 [ID-24] docker ps
 [ID-45] winget upgrade -e --id Docker.DockerDesktop
+[ID-46] docker exec --user www-data nextcloud-app-1 php occ config:system:set log_rotate_size --value=10485760
+[ID-47] docker exec --user www-data nextcloud-app-1 php occ config:system:set loglevel --value=2
