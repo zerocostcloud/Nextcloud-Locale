@@ -10,11 +10,21 @@ services:
     - MYSQL_PASSWORD=nextcloud
     - MYSQL_DATABASE=nextcloud
     - MYSQL_USER=nextcloud
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
   adminer:
     image: adminer
     restart: always
     ports:
     - 8081:8080
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
   app:
     image: nextcloud
     restart: always
@@ -29,6 +39,11 @@ services:
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=nextcloud
       - MYSQL_HOST=db
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
   cron:
      image: nextcloud
      restart: always
@@ -39,6 +54,11 @@ services:
      entrypoint: /cron.sh
      depends_on:
        - db
+     logging:
+       driver: "json-file"
+       options:
+         max-size: "10m"
+         max-file: "3"
 volumes:
   db_data:
   nextcloud_data:
