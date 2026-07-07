@@ -48,3 +48,7 @@
 [ID-48] docker exec --user www-data nextcloud-app-1 php occ config:system:set default_phone_region --value="US"
 [ID-49] docker exec --user www-data nextcloud-app-1 php occ config:system:set default_phone_region --value="GB"
 [ID-50] docker exec -it --user www-data nextcloud-app-1 php occ user:resetpassword USERNAME
+[ID-51] docker exec --user www-data nextcloud-app-1 php occ config:system:set default_phone_region --value="ES"
+[ID-52] docker exec --user www-data nextcloud-app-1 php occ config:system:set default_phone_region --value="DE"
+[ID-53] docker exec -it --user www-data nextcloud-app-1 php occ user:resetpassword NOMBRE_USUARIO
+[ID-54] docker exec -it --user www-data nextcloud-app-1 php occ user:resetpassword BENUTZERNAME
